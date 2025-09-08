@@ -1,9 +1,29 @@
 
+import { Suspense } from 'react';
 import './App.css'
 import Batsman from './Batsman'
 import Counter from './Counter'
+import Users from './Users'
+import Friends from './Friends';
+import Posts from './Posts';
+import Players from './Players';
+
+
+// const fecthUsers = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
+
+// const fetchFriends = async() => {
+//   const res = await fetch('https://jsonplaceholder.typicode.com/users');
+//   return res.json();
+// }
+
+// const fecthPosts = async() => {
+//   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+//   return res.json();
+// }
 
 function App() {
+  // const friendsPromise = fetchFriends();
+  // const postsPromise = fecthPosts();
 
   // function handleClick() {
   //   console.log('clicked')
@@ -21,9 +41,22 @@ function App() {
   return (
     <>
       <h1>React Core Concepts</h1>
-      
-      {/* <Counter /> */}
+      <Players />
 
+      {/* <Suspense fallback={<h4>Posts are coming...</h4>}>
+        <Posts postsPromise = {postsPromise}/>
+      </Suspense> */}
+
+      {/* <Suspense fallback={<h4>Loading...</h4>}>
+        <Users fetchUsers={fecthUsers} />
+      </Suspense> */}
+
+      {/* <Suspense fallback={<h4>Friends are coming...</h4>}>
+        <Friends friendsPromise = {friendsPromise}/>
+      </Suspense> */}
+
+
+      {/* <Counter /> */}
       <Batsman />
 
       {/* <button onclick="handleClick">Click Me</button> 
@@ -41,7 +74,7 @@ function App() {
 
       <button onClick={() => handleAdd5(10)}>Click add 5</button> */}
     </>
-  )
+  );
 }
 
 export default App
